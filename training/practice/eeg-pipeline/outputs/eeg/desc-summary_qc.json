@@ -1,0 +1,9 @@
+{
+  "Description": "Dataset-level QC summary for eeg-pipeline derivatives.",
+  "GeneratedBy": [
+    {
+      "Name": "eeg-pipeline",
+      "Version": "2.2.0"
+    }
+  ]
+}

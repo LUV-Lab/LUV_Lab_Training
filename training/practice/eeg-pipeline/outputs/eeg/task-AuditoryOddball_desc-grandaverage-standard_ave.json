@@ -1,0 +1,12 @@
+{
+  "Condition": "Standard",
+  "Description": "Grand-average evoked response for Standard.",
+  "GeneratedBy": [
+    {
+      "Name": "eeg-pipeline",
+      "Version": "2.2.0"
+    }
+  ],
+  "Session": null,
+  "Task": "AuditoryOddball"
+}

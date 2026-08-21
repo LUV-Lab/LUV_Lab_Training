@@ -1,0 +1,12 @@
+{
+  "Condition": "Deviant",
+  "Description": "Grand-average evoked response for Deviant.",
+  "GeneratedBy": [
+    {
+      "Name": "eeg-pipeline",
+      "Version": "2.2.0"
+    }
+  ],
+  "Session": null,
+  "Task": "AuditoryOddball"
+}

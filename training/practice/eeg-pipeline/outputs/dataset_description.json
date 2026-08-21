@@ -1,0 +1,16 @@
+{
+  "BIDSVersion": "1.11.1",
+  "DatasetType": "derivative",
+  "GeneratedBy": [
+    {
+      "Name": "eeg-pipeline",
+      "Version": "2.2.0"
+    }
+  ],
+  "Name": "eeg-pipeline derivatives",
+  "SourceDatasets": [
+    {
+      "URL": "file://BUILD_DIR/ds007069"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+# Practice config for the LUV Lab eeg-pipeline training module.
+# Dataset: OpenNeuro ds007069 "PURSUE MMN Auditory Oddball" (CC0) --
+# the ERP CORE MMN paradigm (Kappenman et al., 2021) recorded for
+# undergraduate training. Fetch it with ./fetch_data.sh (see README.md).
+#
+# Verified against eeg-pipeline v2.2.0 (tag = commit 8c31db2; code-identical to pre-bump commit b3cdd52) and against
+# sub-1001/sub-1002 of ds007069 v1.0.0. Unknown keys are rejected at load,
+# so edit carefully -- a typo fails loudly (that is a feature).
+
+task: mmn
+
+input:
+  mode: "bids"
+
+paths:
+  # Set these to wherever fetch_data.sh put the dataset, either by editing
+  # here or (recommended, keeps this file portable) via CLI flags:
+  #   --bids_root "$HOME/eeg-practice/ds007069" \
+  #   --derivatives_root "$HOME/eeg-practice/ds007069/derivatives"
+  bids_root: null
+  derivatives_root: null
+  sourcedata_root: null
+  raw_dir: null
+  subject_csv_dir: null
+
+bids:
+  subjects: null            # or e.g. ["1001"] / ["sub-1001"]
+  sessions: null
+  tasks: ["AuditoryOddball"]
+  runs: null
+
+channels:
+  # This dataset HAS true EOG channels (unlike the LUV lab's own cap, which
+  # uses Fp1 as a blink proxy). Names must match the raw file exactly.
+  eog_chs: ["VEOG L", "HEOG L", "HEOG R"]
+  blink_proxy_chs: ["Fp1"]  # fallback only; EOG above takes precedence
+  drop_aux_chs: ["AUX"]     # none present in this dataset; harmless
+
+preprocess:
+  montage: "standard_1020"  # FP1/FP2 in the raw are auto-renamed to Fp1/Fp2
+  reref: "tp9_tp10"         # ERP CORE-style mastoid reference (TP9/TP10 present)
+  notch_hz: [60.0]          # US line noise
+  l_freq: 0.1
+  h_freq: 20.0              # ERP CORE-style low-pass
+
+events:
+  # ERP CORE MMN codes: standard tone = 80, deviant tone = 70.
+  # Code 180 marks the block-start warm-up standards (excluded, as in ERP
+  # CORE); fetch_data.sh already removed the one non-numeric "boundary" row.
+  behavioral_keep_codes: [70, 80]
+  standard_codes: [80]
+  deviant_codes: [70]
+  condition_map: null
+  csv_fallback_dir: null
+  drop_eeg_markers_by_gap_s: null
+  auto_drop_to_count: true  # moot here: events.tsv has a numeric `sample`
+                            # column, so samples are used directly (no
+                            # alignment heuristics)
+
+epoching:
+  tmin: -0.2
+  tmax: 0.6
+  baseline: [-0.2, 0.0]
+
+artifacts:
+  test_window: [-0.2, 0.3]
+  max_reject_rate: 0.5      # skip a subject's evokeds/metrics above 50% rejection
+  blink:
+    threshold_uv: 75.0
+    win_ms: 200.0
+    step_ms: 10.0
+    auto_percentile: 99.0   # ERP CORE-style individualized threshold
+  voltage:
+    method: "simple"
+    pos_uv: 150.0
+    neg_uv: -150.0
+    auto_percentile: 97.5   # ERP CORE-style individualized threshold
+
+ica:
+  mode: "auto"              # auto: ICA runs if blink rate >= auto_blink_rate_per_min OR eog_corr_max >= corr_thresh
+  auto_blink_rate_per_min: 15.0
+  method: "fastica"
+  n_components: 0.99
+  random_state: 97
+  max_iter: 512
+  fit_l_freq: 1.0
+  fit_h_freq: null
+  decim: 3
+  corr_thresh: 0.30
+  max_exclude: 3
+  save_ica: true
+
+labels:
+  token_map: null           # not a token-role design
+
+compute:
+  use_gpu: false
+  gpu_device: null
+  n_jobs: 1
+
+conversion:
+  enabled: false
+  bids_output_root: null
+  overwrite: true
+
+metrics:
+  erp:
+    enabled: true
+    timeseries: true
+    channels: ["Fz", "FC3", "FC4", "Cz"]   # fronto-central MMN sites (no FCz in this montage)
+    windows:
+      - { name: "MMN_125_225", tmin: 0.125, tmax: 0.225 }  # ERP CORE measurement window
+    # compute_mmn defaults to 1 -> Deviant-Standard difference (DEV_MINUS_STD)
+
+  tfr:
+    enabled: true
+    method: "multitaper"
+    tmin: -0.2
+    tmax: 0.6
+    fmin: 3.0               # theta band, as in the lab's own MMN config
+    fmax: 8.0
+    time_decim: 4           # downsample TFR metrics time axis to keep the
+                            # practice tables small (500 Hz -> 125 Hz)
+    # baseline keys are INERT for TFR metrics (ERPLAB-style; figures only)
+    baseline: [-0.2, 0.0]
+    baseline_mode: "logratio"
