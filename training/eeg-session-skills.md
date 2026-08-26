@@ -1,18 +1,7 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 0cb69cd on 2026-08-21.
+     Published from the lab's internal repository @ 867e294 on 2026-08-26.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
-
----
-module: 5
-title: EEG session skills (running a participant to protocol)
-status: READY — PI authorized 2026-08-12 (content complete since 2026-07-20; flipped on PI review, without the verification pass Module 6 received)
-prerequisite-for: Cognition-cluster data collection (CAREER task battery)
-owner: undergrad-mentor
-operational-authority: LUV Lab EEG Runbook (PI-supplied 2026-08-05; undated; describes the pre-move location; not in this repo)
-pipeline-reference: knowledge/eeg-pipeline.md
-last-reviewed: 2026-08-21
----
 
 # Module 5 — EEG session skills: running a participant to protocol
 

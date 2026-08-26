@@ -7,7 +7,7 @@ modules are complete and usable but still under internal review.
 
 | Module | File | Status |
 |---|---|---|
-| Data ethics & privacy for research assistants | `data-ethics-for-ras.md` | DRAFT |
+| Data ethics & privacy for research assistants | `data-ethics-for-ras.md` | READY |
 | Praat / acoustic measurement basics | `praat-acoustics.md` | DRAFT |
 | Forced alignment (MFA) | `forced-alignment-mfa.md` | DRAFT |
 | EEG session skills (capping, impedances, running participants) | `eeg-session-skills.md` | READY |

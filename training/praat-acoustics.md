@@ -1,17 +1,7 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 0cb69cd on 2026-08-21.
+     Published from the lab's internal repository @ 867e294 on 2026-08-26.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
-
----
-module: 2
-title: Praat / acoustic measurement basics
-status: DRAFT — content complete; PI verifies to READY
-prerequisite-for: sociophonetic work packages (p-vowel-identity, d-prep-corpus)
-owner: undergrad-mentor
-last-reviewed: 2026-08-21
-practice-data: people/training/practice-data/praat/
----
 
 # Module 2 — Praat / acoustic measurement basics
 

@@ -1,17 +1,7 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 0cb69cd on 2026-08-21.
+     Published from the lab's internal repository @ 867e294 on 2026-08-26.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
-
----
-module: 6
-title: Running the lab's eeg-pipeline (config → CLI → QC)
-status: READY — PI authorized 2026-08-12 (content adversarially verified against pipeline v2.2.0 the same day)
-prerequisite-for: Cognition-cluster analysis (CAREER task battery)
-owner: undergrad-mentor
-canonical-reference: knowledge/eeg-pipeline.md
-last-reviewed: 2026-08-12
----
 
 # Module 6 — Running the lab's `eeg-pipeline` (config → CLI → QC)
 

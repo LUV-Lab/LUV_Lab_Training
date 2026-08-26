@@ -1,17 +1,7 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 0cb69cd on 2026-08-21.
+     Published from the lab's internal repository @ 867e294 on 2026-08-26.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
-
----
-module: 3
-title: Forced alignment (Montreal Forced Aligner)
-status: DRAFT — content complete; PI verifies to READY. One exercise is BLOCKED on a PI confirmation (see §2)
-prerequisite-for: corpus / sociophonetic work packages (d-prep-corpus, p-vowel-identity)
-owner: undergrad-mentor
-last-reviewed: 2026-08-21
-practice-data: people/training/practice-data/mfa/
----
 
 # Module 3 — Forced alignment (Montreal Forced Aligner)
 

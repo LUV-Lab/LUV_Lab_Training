@@ -1,20 +1,9 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 0cb69cd on 2026-08-21.
+     Published from the lab's internal repository @ 867e294 on 2026-08-26.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
 
----
-module: 0
-title: Data ethics & privacy for RAs
-status: DRAFT — content complete; PI verifies to READY
-prerequisite-for: ALL human-subjects work (speech and EEG)
-owner: undergrad-mentor
-last-reviewed: 2026-08-21
----
-
 # Module 0 — Data ethics & privacy for RAs  *(PREREQUISITE)*
-
-**Status: DRAFT (2026-08-05)** — content complete; awaiting PI review to flip to READY.
 
 ---
 
@@ -22,16 +11,16 @@ last-reviewed: 2026-08-21
 
 **Most LUV Lab undergraduates have already completed the CITI training this lab requires.**
 If you took **PSY 2050** and completed **Core Lab 2: Research Ethics & CITI Training**, you
-did it there — and **your certification is valid for three years** (Core Lab 2). You do not
-redo it.
+did it there — and Core Lab 2 treats that certification as **valid for three years**. You do
+not redo it.
 
 **→ You have current CITI certification (completed within the last three years).**
 You are compliant. Two steps and you are done with this part:
 
-1. **Send your CITI Completion Reports (PDF) to the Lab Manager.** Download them any time
-   from CITI's **My Records** tab. Include the completion dates so currency can be tracked.
-2. **Ask the Lab Manager about CAYUSE** (Villanova's IRB system). Enrollment follows CITI
-   completion, and the Lab Manager handles it — provide requested information promptly.
+1. **Send your CITI Completion Reports (PDF) to the Lab Manager or the PI.** Download them any
+   time from CITI's **My Records** tab. Include the completion dates so currency can be tracked.
+2. **Ask the Lab Manager or the PI about CAYUSE** (Villanova's IRB system). Enrollment follows
+   CITI completion — provide requested information promptly.
 
 Then keep reading from §1. CITI is the *university's* requirement; §§1–7 below are the
 *lab's* data rules. They are different things and both apply.
@@ -56,13 +45,9 @@ do the five exercises, check yourself against the key, then take the PI's short 
 the data-use agreement. **CITI is separate and additional (§8): ~2.5–4 hours — but only if you
 have not already done it,** and most students here have.
 
-Grounding: this module operationalizes the privacy norms in the repo's `CLAUDE.md`
-("Data privacy" and "Confidentiality"), `RESEARCH_PROFILE.md` ("anonymization is
-load-bearing"), and `knowledge/eeg-pipeline.md` ("Data privacy is load-bearing"). §8 is
-transcribed from three PI-supplied sources dated **2026-08-05**: the **PSY 2050 Core Lab 2**
-assignment, the **LUV Lab onboarding document**, and the **LUV Lab info sheet**. Where a
-lab-specific procedure is not documented in any of these, it is marked **[confirm]** — ask the
-PI or Lab Manager rather than guessing.
+**What this module puts into practice.** The lab's standing privacy rules: anonymization is
+load-bearing, and identifiable participant material never enters the lab's code repository.
+§§1–7 are those rules; §8 is the university's separate training requirement.
 
 ---
 
@@ -205,11 +190,9 @@ apply, neither replaces the other. **If you already have current CITI certificat
 met this section** — see "Start here" at the top, send your certificates, and read on only if
 you want to know what your certification covers and why.
 
-**Source note.** Everything here is transcribed from the PI's **PSY 2050 Core Lab 2**
-assignment, the **LUV Lab onboarding document**, and the **LUV Lab info sheet** (supplied
-2026-08-05). Villanova's **Office of Research Protections** training page is the live
-authority on what is required and supersedes this section if the two disagree — the
-onboarding document points there for the current list.
+**Villanova's Office of Research Protections is the live authority on what training is
+required.** If its current list and this section ever disagree, follow the ORP list — it is
+linked, with its full address, in §8.2.
 
 ### 8.1 Who needs what — the Villanova role matrix
 
@@ -222,29 +205,41 @@ this module holds — the Villanova training matrix reads:
 | **Human Subjects Research** | Required **if named on a Human Subjects research protocol** |
 | **Conflicts of Interest** | **Dependent on project role** |
 | **Research Security** | **May be required for sponsored research, depending on project role** |
-| **Safe Research Environments** | Required for **NSF research with an off-campus component** — **not triggered here**; see the ruling below |
+| **Safe Research Environments** | Required for **NSF research with an off-campus component** — **not triggered here**; see the note below |
 | **Animal Research** | Required **only if named on such a protocol** — **not applicable** to this lab's work |
 | **Research with Biohazards** | Required **only if named on such a protocol** — **not applicable** to this lab's work |
 
-Two things follow from reading this matrix against Core Lab 2:
+That table is the **university's** minimum, transcribed as supplied. The lab asks for more:
 
-**Core Lab 2 deliberately covers more than the matrix minimum.** It has every student take
-Conflicts of Interest (its instruction: **"Yes — required for all researchers at Villanova"**)
-and Research Security (**Basic**) regardless of project role, and take the Human Subjects
-Research course whether or not they are yet named on a protocol. So if you completed Core Lab
-2, the conditional rows above are already satisfied — including Human Subjects Research, ahead
-of ever being added to a CAYUSE protocol.
+> ### The LUV Lab requires two extra courses of **every** RA
+>
+> **Whatever your project role, you complete Conflicts of Interest and Information Privacy
+> Security (IPS for Researchers).** Conflicts of Interest appears above as conditional, and
+> Information Privacy Security does not appear in the university matrix at all — in this lab,
+> both are required of everyone. We would rather over-cover than find a gap in the middle of a
+> study, when it is too late to fix cheaply.
+>
+> This is a **LUV Lab requirement**, not a statement of Villanova policy. It is already built
+> into the course selections in §8.2 (#3 and #6) and the course list in §8.3 — follow those and
+> you have met it without doing anything extra.
 
-> **Safe Research Environments — asked and ruled: not required here (PI determination,
-> 2026-08-05).** Core Lab 2 instructs students to answer **No** to Safe Research Environments,
-> and the matrix attaches that course to **NSF research with an off-campus component**. Because
-> the lab's **planned NSF CAREER program** is its strategic spine (`RESEARCH_PROFILE.md` — its
-> studies spawn once funded; corrected from "award" 2026-08-21), the question
-> was put to the PI, who determined on **2026-08-05** that no CAREER or other NSF activity in
-> this lab has an off-campus component. **Safe Research Environments is therefore not required
-> for this lab's RAs, and a Core Lab 2 completer is not missing anything.** (This is the PI's
-> determination about the lab's own work, not a documented compliance audit of the planned
-> program.)
+Two things follow from reading the matrix against Core Lab 2:
+
+**Core Lab 2 covers more than the matrix minimum — including both lab-required courses.** It
+has every student take Conflicts of Interest, Research Security (**Basic**), and Information
+Privacy Security regardless of project role, and take the Human Subjects Research course
+whether or not they are yet named on a protocol. So if you completed Core Lab 2, you have met
+the matrix *and* the lab requirement above — including Human Subjects Research, ahead of ever
+being added to a CAYUSE protocol. For the rows that do not apply to this lab's work — Safe
+Research Environments, Animal Research, Research with Biohazards — Core Lab 2 has you answer
+*No*.
+
+> **Safe Research Environments — not required here.** Core Lab 2 instructs students to answer
+> **No** to Safe Research Environments, and the matrix attaches that course to **NSF research
+> with an off-campus component**. As this lab's work is currently scoped, no NSF activity here
+> has an off-campus component — including the lab's **planned NSF CAREER program**. **Safe
+> Research Environments is therefore not required for this lab's RAs as things stand, and a
+> Core Lab 2 completer is not missing anything.**
 >
 > **Standing condition — the requirement attaches to the off-campus component, not to the
 > program.** So it can return if the work changes: **if off-campus data collection is ever added
@@ -254,20 +249,16 @@ of ever being added to a CAYUSE protocol.
 > your own initiative; if you hear that off-campus collection is being planned, mention it to
 > the PI.
 
-`[confirm]` — the supplied matrix has no row for **Information Privacy Security**, though Core
-Lab 2 requires the **IPS for Researchers** course (§8.3). Core Lab 2 completers therefore hold
-it; whether the university requires it of RAs independently of the course is not stated in the
-sources.
-
 ### 8.2 Registering with CITI and selecting courses
 
 1. **Review Villanova's own pages first** — they explain which modules apply to the research
    you will actually be doing:
-   - Responsible Conduct of Research —
+   - Responsible Conduct of Research — [responsible conduct of research page](https://www1.villanova.edu/university/research-scholarship/responsible-conduct.html)
      `https://www1.villanova.edu/university/research-scholarship/responsible-conduct.html`
-   - Villanova Regulatory Training —
+   - Villanova Regulatory Training — [Office of Research Protections training requirements page](https://www1.villanova.edu/villanova/provost/research-administration/research-protections/training.html)
      `https://www1.villanova.edu/villanova/provost/research-administration/research-protections/training.html`
-2. **Register** at the CITI Program (`https://about.citiprogram.org/`). Select **Villanova
+2. **Register** at the [CITI Program](https://about.citiprogram.org/) —
+   `https://about.citiprogram.org/`. Select **Villanova
    University** as your **organizational affiliation**, and **use your Villanova email
    address** when creating the account. Log in with your Villanova credentials.
 3. When prompted to **add a course**, you are asked a series of questions. Answer them exactly
@@ -277,7 +268,7 @@ sources.
 |---|---|---|
 | 1 | Research Security Course | **Basic** |
 | 2 | Human Subjects Research | **Social and Behavioral Research Investigators** |
-| 3 | Conflicts of Interest | **Yes** (required for all researchers at Villanova) |
+| 3 | Conflicts of Interest | **Yes** — Core Lab 2's instruction: *"required for all researchers at Villanova"* |
 | 4 | Responsible Conduct of Research | **Social and Behavioral Sciences** |
 | 5 | Safe Research Environments | **No** — correct for this lab; see the standing condition in §8.1 |
 | 6 | Information Privacy Security | **IPS for Researchers** |
@@ -288,14 +279,19 @@ sources.
 | 11 | GCP – SBR Advanced Refresher | **Not at this time** |
 | 12 | Good Clinical Practice Refresher | **Not at this time** |
 
-### 8.3 The required modules, and the quizzes
+### 8.3 The courses to complete, and the quizzes
 
-Complete these four modules in the **Social & Behavioral Research – Basic** track:
+**You complete five courses.** Four of them sit in the **Social & Behavioral Research – Basic**
+track:
 
 - Social and Behavioral Responsible Conduct of Research
 - Information Privacy Security (IPS) for Researchers
 - CITI Conflicts of Interest
 - Social & Behavioral Research – Basic
+
+**The fifth is Research Security (Basic)** — selection #1 in §8.2. It is enrolled separately
+and is its own course, not part of the track above. **Complete it as well.** It is the one
+students most often miss, precisely because it sits outside the track.
 
 **Not required for this lab:** *Basic Biosafety Training* and *Working with the IACUC Course*.
 Core Lab 2 flags them for students who anticipate working with biohazards, chemicals, or
@@ -308,17 +304,17 @@ in it. The quizzes are open-book and meant to reinforce the material; you may co
 module text while taking them. *(Practical tip from Core Lab 2: duplicate your browser tab so
 the module stays open beside the quiz.)*
 
-**Total time: approximately 2.5–4 hours** (onboarding document).
+**Total time: approximately 2.5–4 hours.**
 
 ### 8.4 Proof of completion — what the lab needs
 
 Download your **Completion Reports (PDF)** when you finish. They are also available any time
 from the **My Records** tab, so a lost file is never a reason to redo a module.
 
-**The lab's requirement is one step: send your completion reports to the Lab Manager**
-(onboarding document). Include the completion dates, so the three-year expiry can be tracked.
-`[confirm]` — whether the lab wants a particular filename convention, a single email, or an
-upload somewhere; the sources do not say. Ask the Lab Manager, and don't invent one.
+**The lab's requirement is one step: send your completion reports to the Lab Manager or the
+PI.** Include the completion dates, so the three-year expiry can be tracked. **Ask the Lab
+Manager or the PI how they want them sent** — one email, a particular filename, or an upload
+somewhere.
 
 **Not lab procedure — do not go looking for a lab equivalent.** Core Lab 2's submission
 mechanics (uploading to Blackboard, renaming reports `LASTNAME_Course.pdf`, zipping them to
@@ -327,8 +323,7 @@ They govern your grade in that course and have nothing to do with the lab. The l
 certificates; that is all.
 
 **Then CAYUSE.** After CITI is complete, the Lab Manager works to add you to **CAYUSE**,
-Villanova's IRB system. Provide requested information promptly so you can be added
-(onboarding document).
+Villanova's IRB system. Provide requested information promptly so you can be added.
 
 ### 8.5 What CITI unlocks — training is the gate on every resource
 
@@ -337,27 +332,27 @@ essentially everything you will need:
 
 | Resource | What CITI has to do with it |
 |---|---|
-| **LabArchives — *edit* access** (experiment SOPs and runbooks, analysis runbooks, project descriptions, presentation templates, and IRB materials: protocols, recruitment materials, informed-consent documents) | Read access comes with being on the lab mailing list. **Edit access requires completed CITI training** plus active lab membership (info sheet). |
-| **CAYUSE enrollment** (Villanova's IRB system) | Happens **after** CITI; the Lab Manager enrolls you (onboarding document). |
-| **NAS account** (lab storage: training exercises, experimental data, computational simulations, corpora) and **GPU account** (statistical modeling, simulations) | Restricted to lab personnel who have **completed CITI training** and are actively conducting research; the PI provisions the accounts (info sheet). |
-| **Sound-booth scheduling** (per-booth calendars — LUV and WRAP labs; booth time requested from the Lab Manager or the PI; scheduling model per PI, 2026-08-20) | Restricted to those with **updated CITI training** who are actively conducting research (onboarding document). |
+| **[LabArchives](https://mynotebook.labarchives.com/login) — *edit* access** — `https://mynotebook.labarchives.com/login` (experiment SOPs and runbooks, analysis runbooks, project descriptions, presentation templates, and IRB materials: protocols, recruitment materials, informed-consent documents) | Read access comes with being on the lab mailing list. **Edit access requires completed CITI training** plus active lab membership. |
+| **CAYUSE enrollment** (Villanova's IRB system) | Happens **after** CITI; the Lab Manager enrolls you. |
+| **NAS account** (lab storage: training exercises, experimental data, computational simulations, corpora) and **GPU account** (statistical modeling, simulations) | Restricted to lab personnel who have **completed CITI training** and are actively conducting research; the PI provisions the accounts. |
+| **Sound-booth scheduling** (per-booth calendars — LUV and WRAP labs; booth time requested from the Lab Manager or the PI) | Restricted to those with **updated CITI training** who are actively conducting research. |
 
-Note the word **"updated."** Currency matters, not just having done it once: certification runs
-**three years** (Core Lab 2). A lapsed certificate does not hold these doors open.
-`[confirm]` — the lab's renewal lead time, and which CITI refresher course to take on expiry;
-the sources state the three-year validity but not the renewal procedure.
+Note the word **"updated."** Currency matters, not just having done it once: Core Lab 2 puts
+the certification's validity at **three years**. A lapsed certificate does not hold these doors
+open. **Ask the Lab Manager or the PI which refresher course to take and how far ahead to start
+it** — do not wait for the expiry date to find out.
 
 ### 8.6 Who this applies to
 
-The onboarding document scopes CITI to students who **"plan to participate in data
-collection."** The info sheet then gates **LabArchives edit access, NAS, and GPU** on completed
-CITI as well — so in practice it reaches nearly every active RA, including analysis-side
-students who never run a participant but do need lab storage or compute.
+The lab's onboarding materials scope CITI to students who **plan to participate in data
+collection** — and they gate
+**LabArchives edit access, NAS, and GPU** on completed CITI as well, so in practice
+it reaches nearly every active RA, including analysis-side students who never run a participant
+but do need lab storage or compute.
 
-`[confirm]` — whether a student who works **only** from de-identified files already in this
-repository, and never needs NAS, GPU, CAYUSE, or a booth, is exempt. The sources do not resolve
-it. If that might be you, **ask before assuming you are** — that is Section 5's rule applied to
-your own paperwork.
+If you work **only** from de-identified files already in the lab's repository and never need
+NAS, GPU, CAYUSE, or a booth, **ask the Lab Manager or the PI whether CITI is still required of
+you** — do not assume you are exempt. That is Section 5's rule applied to your own paperwork.
 
 ---
 
@@ -422,19 +417,21 @@ enter the repo — only de-identified derivatives may, and only after IRB status
 ("When unsure, stop and ask before acting.")
 
 **Ex. 5.** (a) **Nothing to redo** — send the completion reports (with dates) to the Lab
-Manager and ask about CAYUSE; Core Lab 2 certification is valid **three years**.
+Manager or the PI and ask about CAYUSE; Core Lab 2 treats certification as valid **three
+years**.
 (b) **The full path in §8** — register with a Villanova email and Villanova University
 affiliation, make the twelve course selections, complete the four Social & Behavioral Research
-– Basic modules at ≥80% per quiz, download from **My Records**, send to the Lab Manager;
-~2.5–4 hours, week 1.
+– Basic modules **plus Research Security (Basic)** — five courses — at ≥80% per quiz,
+download from **My Records**, send to the Lab Manager or the PI; ~2.5–4 hours, week 1.
 (c) **Not current** — 2022 plus three years has lapsed, so the resources in §8.5 stay closed
-until it is renewed. Renewal specifics are `[confirm]`: ask the Lab Manager or PI rather than
-assuming the old certificate still counts, and rather than assuming a full retake is needed.
-(d) **No — their certification is complete.** The PI determined on **2026-08-05** that no NSF
-activity in this lab has an off-campus component, so **Safe Research Environments is not
-required here** (§8.1). The reasoning worth keeping is the trigger: the requirement attaches to
-the *off-campus component*, so if that study did add off-campus collection, the course would
-become required for the RAs on it and certifications completed beforehand would not cover it.
+until it is renewed. **Ask the Lab Manager or the PI how to renew** — do not assume the old
+certificate still counts, and do not assume a full retake is needed.
+(d) **Their certification is complete as things stand — and what they heard is exactly the
+thing to pass on.** Safe Research Environments is not required for this lab's work as it is
+currently scoped, so nothing is missing from what they have already done (§8.1). But the
+requirement attaches to the *off-campus component*: if that study does add off-campus
+collection, the course becomes required for the RAs on it, and certifications completed
+beforehand would not cover it.
 Mention it to the PI when the study is scoped; don't enroll on your own, and don't treat
 yourself as out of compliance in the meantime.
 (e) **Two different gates, and neither one is satisfied.** CITI unlocks LabArchives *edit
