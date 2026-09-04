@@ -8,7 +8,7 @@ modules are complete and usable but still under internal review.
 | Module | File | Status |
 |---|---|---|
 | Data ethics & privacy for research assistants | `data-ethics-for-ras.md` | READY |
-| Praat / acoustic measurement basics | `praat-acoustics.md` | DRAFT |
+| Praat / acoustic measurement basics | `praat-acoustics.md` | READY |
 | Forced alignment (MFA) | `forced-alignment-mfa.md` | READY |
 | EEG session skills (capping, impedances, running participants) | `eeg-session-skills.md` | READY |
 | Running the lab's EEG pipeline (config → CLI → QC) | `eeg-pipeline-run.md` | READY |

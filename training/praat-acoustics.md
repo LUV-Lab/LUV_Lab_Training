@@ -1,15 +1,17 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 0fa324c8 on 2026-09-04.
+     Published from the lab's internal repository @ 3cc774ca on 2026-09-04.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
 
 # Module 2 — Praat / acoustic measurement basics
 
-**Status: DRAFT** — fix pass 2026-09-02 against the 08-30 review; re-check passed the same day
-subject to two text edits, which have landed; awaiting the PI's READY flip.
+**Status: READY** — PI-verified 2026-09-04. *(READY describes this material, not you: you still
+pass the competence check at the bottom before you measure for a project.)*
 *(Content complete since 2026-08-05; the audio fixtures and Exercise 4 were added 2026-08-28/29
-and rebuilt 2026-09-02. Status is recorded here **and** in the front matter, and the two flip
-together — the public mirror strips the front matter and sees only this line.)*
+and rebuilt 2026-09-02 in the fix pass against the 08-30 review, whose re-check passed the same
+day subject to two text edits, which landed that day. Status is recorded here **and** in the
+front matter, and the two flip together — the public mirror strips the front matter and sees
+only this line.)*
 
 **Purpose.** Enough Praat to open sound + TextGrid, read a spectrogram, and hand-measure
 vowel formants (F1/F2) — the skill that lets an RA **QC automated measurements** and trust
