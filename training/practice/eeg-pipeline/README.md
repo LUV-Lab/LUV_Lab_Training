@@ -1,5 +1,5 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 867e294 on 2026-08-26.
+     Published from the lab's internal repository @ 0fa324c8 on 2026-09-04.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
 

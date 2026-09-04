@@ -19,15 +19,15 @@ item []:
         intervals [2]:
             xmin = 0.35 
             xmax = 0.575 
-            text = "MY" 
+            text = "my" 
         intervals [3]:
             xmin = 0.575 
             xmax = 0.895 
-            text = "COUSIN" 
+            text = "cousin" 
         intervals [4]:
             xmin = 0.895 
             xmax = 1.175 
-            text = "WORE" 
+            text = "wore" 
         intervals [5]:
             xmin = 1.175 
             xmax = 1.265 
@@ -35,35 +35,35 @@ item []:
         intervals [6]:
             xmin = 1.265 
             xmax = 1.4 
-            text = "HER" 
+            text = "her" 
         intervals [7]:
             xmin = 1.4 
             xmax = 2.95 
-            text = "IGGLES" 
+            text = "iggles" 
         intervals [8]:
             xmin = 2.95 
             xmax = 3.3 
-            text = "JERSEY" 
+            text = "jersey" 
         intervals [9]:
             xmin = 3.3 
             xmax = 3.435 
-            text = "TO" 
+            text = "to" 
         intervals [10]:
             xmin = 3.435 
             xmax = 3.52 
-            text = "THE" 
+            text = "the" 
         intervals [11]:
             xmin = 3.52 
             xmax = 3.82 
-            text = "GAME" 
+            text = "game" 
         intervals [12]:
             xmin = 3.82 
             xmax = 4.165 
-            text = "LAST" 
+            text = "last" 
         intervals [13]:
             xmin = 4.165 
             xmax = 4.45 
-            text = "NIGHT" 
+            text = "night" 
         intervals [14]:
             xmin = 4.45 
             xmax = 4.57 
@@ -71,31 +71,31 @@ item []:
         intervals [15]:
             xmin = 4.57 
             xmax = 4.73 
-            text = "AND" 
+            text = "and" 
         intervals [16]:
             xmin = 4.73 
             xmax = 4.89 
-            text = "WE" 
+            text = "we" 
         intervals [17]:
             xmin = 4.89 
             xmax = 5.785 
-            text = "WATCHED" 
+            text = "watched" 
         intervals [18]:
             xmin = 5.785 
             xmax = 5.803 
-            text = "THE" 
+            text = "the" 
         intervals [19]:
             xmin = 5.803 
             xmax = 6.078 
-            text = "WHOLE" 
+            text = "whole" 
         intervals [20]:
             xmin = 6.078 
             xmax = 6.338 
-            text = "LEAGUE" 
+            text = "league" 
         intervals [21]:
             xmin = 6.338 
             xmax = 6.808 
-            text = "PLAYOFF" 
+            text = "playoff" 
         intervals [22]:
             xmin = 6.808 
             xmax = 7.208 
@@ -109,7 +109,7 @@ item []:
         intervals [1]:
             xmin = 0.0 
             xmax = 0.35 
-            text = "sil" 
+            text = "" 
         intervals [2]:
             xmin = 0.35 
             xmax = 0.42 
@@ -153,7 +153,7 @@ item []:
         intervals [12]:
             xmin = 1.175 
             xmax = 1.265 
-            text = "sp" 
+            text = "" 
         intervals [13]:
             xmin = 1.265 
             xmax = 1.315 
@@ -241,7 +241,7 @@ item []:
         intervals [34]:
             xmin = 4.45 
             xmax = 4.57 
-            text = "sp" 
+            text = "" 
         intervals [35]:
             xmin = 4.57 
             xmax = 4.645 
@@ -333,4 +333,4 @@ item []:
         intervals [57]:
             xmin = 6.808 
             xmax = 7.208 
-            text = "sil" 
+            text = "" 

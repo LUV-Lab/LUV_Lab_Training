@@ -45,7 +45,7 @@ modules not yet released); those references intentionally do not resolve here. N
 marked `[confirm]` are the lab's own convention for facts pending verification —
 honesty markers, not errors.
 
-Last published from internal revision `867e294` on 2026-08-26.
+Last published from internal revision `0fa324c8` on 2026-09-04.
 
 ## Licensing
 

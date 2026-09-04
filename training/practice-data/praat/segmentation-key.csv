@@ -1,0 +1,38 @@
+file,boundary_index,time_s,left_label,right_label,boundary_type,tolerance_ms,window_start_s,window_end_s,note
+practice-vowels.wav,1,0.2500,sil,IY,abrupt,20,,,silence into vowel
+practice-vowels.wav,2,0.6500,IY,sil,abrupt,20,,,vowel into silence
+practice-vowels.wav,3,0.9500,sil,AA,abrupt,20,,,silence into vowel
+practice-vowels.wav,4,1.3500,AA,sil,abrupt,20,,,vowel into silence
+practice-vowels.wav,5,1.6500,sil,UW,abrupt,20,,,silence into vowel
+practice-vowels.wav,6,2.0500,UW,sil,abrupt,20,,,vowel into silence
+practice-vot.wav,1,0.2000,sil,closure,not-markable,,,,"silence into a silent closure: no acoustic event exists here, so it is not graded"
+practice-vot.wav,2,0.2800,closure,burst,abrupt,5,,,burst onset: the tightest boundary in the set
+practice-vot.wav,3,0.2850,burst,aspiration,not-graded,,,,burst into aspiration: not a boundary annotators mark; the exercise asks for burst onset and voicing onset
+practice-vot.wav,4,0.3510,aspiration,AA,abrupt,10,,,voicing onset ends the VOT (long-lag token)
+practice-vot.wav,5,0.6490,AA,sil,abrupt,20,,,vowel into silence
+practice-vot.wav,6,0.8490,sil,closure,not-markable,,,,"silence into a silent closure: no acoustic event exists here, so it is not graded"
+practice-vot.wav,7,0.9290,closure,burst,abrupt,5,,,burst onset
+practice-vot.wav,8,0.9340,burst,aspiration,not-graded,,,,burst into aspiration: not a boundary annotators mark; the exercise asks for burst onset and voicing onset
+practice-vot.wav,9,0.9469,aspiration,IY,abrupt,10,,,voicing onset ends the VOT (short-lag token)
+practice-vot.wav,10,1.2449,IY,sil,abrupt,20,,,vowel into silence
+practice-fricatives.wav,1,0.1500,sil,AA,abrupt,20,,,silence into vowel
+practice-fricatives.wav,2,0.3280,AA,S,abrupt,15,,,"vowel into voiceless sibilant: periodic energy stops, high-frequency noise starts"
+practice-fricatives.wav,3,0.5440,S,AA,abrupt,15,,,voiceless sibilant into vowel
+practice-fricatives.wav,4,0.7220,AA,sil,abrupt,20,,,vowel into silence
+practice-fricatives.wav,5,0.8720,sil,IY,abrupt,20,,,silence into vowel
+practice-fricatives.wav,6,1.0500,IY,SH,abrupt,15,,,vowel into lower-frequency sibilant
+practice-fricatives.wav,7,1.2660,SH,IY,abrupt,15,,,lower-frequency sibilant into vowel
+practice-fricatives.wav,8,1.4440,IY,sil,abrupt,20,,,vowel into silence
+practice-fricatives.wav,9,1.5940,sil,AA,abrupt,20,,,silence into vowel
+practice-fricatives.wav,10,1.7540,AA,Z,gradual,30,1.7340,1.7740,vowel into VOICED fricative: voicing continues across the boundary while frication rises over the window; key time is its midpoint
+practice-fricatives.wav,11,1.9340,Z,AA,gradual,30,1.9140,1.9540,VOICED fricative into vowel: voicing continues across the boundary while frication fades over the window; key time is its midpoint
+practice-fricatives.wav,12,2.0940,AA,sil,abrupt,20,,,vowel into silence
+practice-connected.wav,1,0.2000,sil,IY,abrupt,20,,,silence into vowel
+practice-connected.wav,2,0.4580,IY,S,abrupt,15,,,vowel into voiceless sibilant
+practice-connected.wav,3,0.6340,S,AA,abrupt,15,,,voiceless sibilant into vowel
+practice-connected.wav,4,0.9020,AA,M,gradual,40,0.8720,0.9320,vowel into nasal murmur: formant amplitudes fall and the low murmur resonance rises across the window; key time is its midpoint
+practice-connected.wav,5,1.1120,M,closure,abrupt,10,,,murmur into the silent closure of the stop
+practice-connected.wav,6,1.1820,closure,burst,abrupt,5,,,burst onset
+practice-connected.wav,7,1.1870,burst,aspiration,not-graded,,,,burst into aspiration: not a boundary annotators mark
+practice-connected.wav,8,1.2140,aspiration,UW,abrupt,10,,,voicing onset
+practice-connected.wav,9,1.4920,UW,sil,abrupt,20,,,vowel into silence

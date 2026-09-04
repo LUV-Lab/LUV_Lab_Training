@@ -1,5 +1,5 @@
 <!-- Public mirror of the LUV Lab training corpus (luv-lab.info).
-     Published from the lab's internal repository @ 867e294 on 2026-08-26.
+     Published from the lab's internal repository @ 0fa324c8 on 2026-09-04.
      Materials: CC BY 4.0 · Scripts: MIT (see repository README).
      Internal cross-references (roster, handbook, project analyses) may not resolve here. -->
 
@@ -203,7 +203,7 @@ this module holds — the Villanova training matrix reads:
 |---|---|
 | **Responsible Conduct of Research** | **Required** |
 | **Human Subjects Research** | Required **if named on a Human Subjects research protocol** |
-| **Conflicts of Interest** | **Dependent on project role** |
+| **Conflicts of Interest** | **Required** |
 | **Research Security** | **May be required for sponsored research, depending on project role** |
 | **Safe Research Environments** | Required for **NSF research with an off-campus component** — **not triggered here**; see the note below |
 | **Animal Research** | Required **only if named on such a protocol** — **not applicable** to this lab's work |

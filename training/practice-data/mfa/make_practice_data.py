@@ -4,14 +4,25 @@
 Writes, into this script's own directory:
 
   practice-aligned.TextGrid   an MFA-style long-format TextGrid ("words" +
-                              "phones" tiers, ARPABET labels with stress
-                              digits) carrying THREE SEEDED DEFECTS
+                              "phones" tiers) carrying THREE SEEDED DEFECTS.
+                              Conventions follow MFA 3.x defaults: silence is
+                              UNLABELLED on both tiers (cleanup_textgrids
+                              strips silence labels; there is no "sp" phone in
+                              3.x), words are lowercase, and phone labels are
+                              ARPABET with stress digits as the
+                              english_us_arpa models emit. An english_mfa
+                              alignment uses IPA-style symbols instead -- the
+                              structure is identical, the symbols are not.
   practice-transcript.lab     the orthographic transcript the alignment claims
                               to correspond to
   oov-report.txt              an out-of-vocabulary report of the kind an
                               aligner emits during validation
   alignment-coverage.csv      per-file coverage statistics for the
                               sparse-alignment detection exercise
+  alignment-analysis-practice.csv
+                              an MFA-style alignment-analysis table (one row
+                              per utterance) for the alignment-analysis
+                              reading exercise
 
 EVERYTHING HERE IS SYNTHETIC. No real participant recording, transcript, or
 metadata is used, and none may be. See people/training/data-ethics-for-ras.md.
@@ -37,12 +48,12 @@ HERE = pathlib.Path(__file__).resolve().parent
 # on vowels). Durations in seconds.
 #
 # SEEDED DEFECTS (do not "fix" them here -- they are the exercise):
-#   D1  word 5 "IGGLES" is out-of-vocabulary and aligns to a single 1.550 s
+#   D1  word 5 "iggles" is out-of-vocabulary and aligns to a single 1.550 s
 #       `spn` interval that swallows the surrounding speech.
-#   D2  word 14 "WATCHED": the AA1 nucleus is 0.710 s, far above any
-#       plausible conversational vowel and above the lab's documented
-#       max_duration_sec filter of 0.5 s.
-#   D3  word 15 "THE" is crushed to 0.018 s total. D2 and D3 are ONE error
+#   D2  word 14 "watched": the AA1 nucleus is 0.710 s, far above any
+#       plausible conversational vowel and above the 0.5 s max_duration_sec
+#       filter one documented project applies (see Module 2).
+#   D3  word 15 "the" is crushed to 0.018 s total. D2 and D3 are ONE error
 #       region, not two: time over-assigned to the AA1 has to come out of a
 #       neighbour. Misalignments come in compensating pairs.
 # --------------------------------------------------------------------------
@@ -88,16 +99,17 @@ def r(x: float) -> float:
 def build_tiers():
     """Return (word_intervals, phone_intervals, xmax).
 
-    Each interval is (xmin, xmax, label). Silence between words is "" on the
-    words tier and an explicit sil/sp label on the phones tier, which is how
-    MFA-style output is laid out.
+    Each interval is (xmin, xmax, label). Silence is UNLABELLED on BOTH
+    tiers, which is what MFA 3.x emits by default (cleanup_textgrids=True
+    strips silence labels; "sp" does not exist as a phone in 3.x). Word
+    labels are lowercase, as MFA's normalization produces.
     """
     words: list[tuple[float, float, str]] = []
     phones: list[tuple[float, float, str]] = []
 
     t = 0.0
     words.append((r(t), r(t + LEADING_SIL), ""))
-    phones.append((r(t), r(t + LEADING_SIL), "sil"))
+    phones.append((r(t), r(t + LEADING_SIL), ""))
     t += LEADING_SIL
 
     for word, phone_list, pause_after in UTTERANCE:
@@ -105,15 +117,15 @@ def build_tiers():
         for phone, dur in phone_list:
             phones.append((r(t), r(t + dur), phone))
             t += dur
-        words.append((r(w_start), r(t), word))
+        words.append((r(w_start), r(t), word.lower()))
 
         if pause_after > 0:
             words.append((r(t), r(t + pause_after), ""))
-            phones.append((r(t), r(t + pause_after), "sp"))
+            phones.append((r(t), r(t + pause_after), ""))
             t += pause_after
 
     words.append((r(t), r(t + TRAILING_SIL), ""))
-    phones.append((r(t), r(t + TRAILING_SIL), "sil"))
+    phones.append((r(t), r(t + TRAILING_SIL), ""))
     t += TRAILING_SIL
 
     return words, phones, r(t)
@@ -164,14 +176,13 @@ def write_oov_report(path: pathlib.Path) -> None:
 # --------------------------------------------------------------------------
 # alignment-coverage.csv -- the sparse-alignment detection exercise.
 #
-# Shape and failure mode are modelled on a REAL, DOCUMENTED lab event: the
-# PREP corpus shipped an MFA_Aligned_TextGrids/ directory whose words tier
-# carried only 1.8-8.2 words per minute and stopped partway through each
-# interview, so it was rejected and the corpus was re-aligned from the
-# verbatim transcripts. See
-#   projects/p-oh-lowering/methods/extraction-and-measurement.md  section 1.1
-# The NUMBERS BELOW ARE SYNTHETIC; only the failure pattern is drawn from
-# that memo.
+# Shape and failure mode are modelled on a real, documented QC event in the
+# lab's own corpus work: a shipped alignment whose words tier carried a small
+# fraction of the words actually spoken and stopped partway through each
+# recording, so it was rejected and re-aligned from the verbatim transcripts.
+# The corpus, the project and the source memo are named in the lab's internal
+# records, not here. The NUMBERS BELOW ARE SYNTHETIC; only the failure
+# pattern is drawn from that event.
 #
 # Seeded bad files: PX03, PX07, PX11.
 # --------------------------------------------------------------------------
@@ -191,6 +202,66 @@ COVERAGE_ROWS = [
     ("PX11", 58.4, 479, 1_284.5),     # seeded: sparse + stops partway
     ("PX12", 61.0, 7_812, 3_648.2),
 ]
+
+
+# --------------------------------------------------------------------------
+# alignment-analysis-practice.csv -- reading an MFA-style alignment analysis.
+#
+# Column STRUCTURE mirrors the alignment-analysis table MFA can produce beside
+# aligned TextGrids: file, begin, end, speaker, overall_log_likelihood,
+# speech_log_likelihood, phone_duration_deviation, snr.
+#
+# EVERY VALUE BELOW IS INVENTED for this exercise. Nothing here is derived,
+# rounded, or scaled from any real analysis of any real corpus, and no real
+# alignment analysis may ever be committed to this repository -- those tables
+# carry per-speaker identifiers and acoustic metadata about real people.
+# The absolute scales are illustrative; the PATTERNS are the lesson.
+#
+# Seeded patterns:
+#   P1  interview04 (spk04): metric columns EMPTY on both rows -- the analysis
+#       produced nothing for that file. Loudest signal in the table.
+#   P2  interview06 utterance 2: phone_duration_deviation 9.8, far above the
+#       rest of the cohort -- the best "look at this file" flag.
+#   P3  interview02 (spk02): snr 4.6 / 5.1, far below the cohort, with mildly
+#       worse deviation -- recording quality, not aligner failure.
+# --------------------------------------------------------------------------
+
+ANALYSIS_ROWS = [
+    # file, begin, end, speaker, overall_ll, speech_ll, phone_dur_dev, snr
+    ("interview01", 12.400, 47.900, "spk01", -34.7, -32.1, 1.4, 22.8),
+    ("interview01", 51.200, 88.650, "spk01", -35.9, -33.4, 1.1, 23.5),
+    ("interview02", 8.900, 44.300, "spk02", -41.2, -39.6, 1.9, 4.6),
+    ("interview02", 47.100, 82.750, "spk02", -40.8, -38.9, 2.2, 5.1),
+    ("interview03", 15.600, 52.050, "spk03", -33.1, -30.7, 1.6, 25.4),
+    ("interview03", 55.300, 91.800, "spk03", -34.4, -31.9, 1.3, 24.9),
+    ("interview04", 10.200, 46.400, "spk04", None, None, None, None),
+    ("interview04", 49.700, 85.100, "spk04", None, None, None, None),
+    ("interview05", 9.500, 45.850, "spk05", -36.2, -33.8, 2.0, 19.7),
+    ("interview05", 48.600, 84.200, "spk05", -35.5, -33.0, 1.7, 20.3),
+    ("interview06", 13.800, 50.100, "spk06", -34.9, -32.6, 1.5, 21.6),
+    ("interview06", 53.400, 89.950, "spk06", -38.6, -36.2, 9.8, 21.1),
+    ("interview07", 11.300, 48.700, "spk07", -33.8, -31.5, 2.6, 26.7),
+    ("interview07", 52.000, 87.400, "spk07", -34.2, -31.8, 0.9, 27.2),
+]
+
+
+def write_analysis(path: pathlib.Path) -> None:
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(
+            [
+                "file",
+                "begin",
+                "end",
+                "speaker",
+                "overall_log_likelihood",
+                "speech_log_likelihood",
+                "phone_duration_deviation",
+                "snr",
+            ]
+        )
+        for row in ANALYSIS_ROWS:
+            w.writerow(["" if v is None else v for v in row])
 
 
 def write_coverage(path: pathlib.Path) -> None:
@@ -220,12 +291,14 @@ def main() -> None:
     write_transcript(HERE / "practice-transcript.lab")
     write_oov_report(HERE / "oov-report.txt")
     write_coverage(HERE / "alignment-coverage.csv")
+    write_analysis(HERE / "alignment-analysis-practice.csv")
 
     print(f"wrote practice-aligned.TextGrid  ({len(words)} word intervals, "
           f"{len(phones)} phone intervals, xmax={xmax}s)")
     print("wrote practice-transcript.lab")
     print("wrote oov-report.txt")
     print(f"wrote alignment-coverage.csv     ({len(COVERAGE_ROWS)} files)")
+    print(f"wrote alignment-analysis-practice.csv ({len(ANALYSIS_ROWS)} rows)")
 
 
 if __name__ == "__main__":
